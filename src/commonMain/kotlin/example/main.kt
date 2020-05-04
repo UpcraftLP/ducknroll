@@ -2,7 +2,7 @@ package example
 
 import com.deflatedpickle.ducknroll.common.api.`object`.Object
 import com.deflatedpickle.ducknroll.common.api.component.IComponent
-import com.deflatedpickle.ducknroll.common.api.matrix.MutableListMatrix
+import com.deflatedpickle.ducknroll.common.api.matrix.Matrix
 import com.deflatedpickle.ducknroll.common.api.property.StringProperty
 import com.deflatedpickle.ducknroll.common.api.util.CommonProperties
 import com.deflatedpickle.ducknroll.common.area.Area
@@ -15,6 +15,7 @@ import com.deflatedpickle.ducknroll.common.dimension.Dimension
 import com.deflatedpickle.ducknroll.common.entity.Player
 import com.deflatedpickle.ducknroll.common.parser.CommandParser
 import com.deflatedpickle.ducknroll.common.registry.Registries
+import com.deflatedpickle.ducknroll.common.spot.Spot
 import com.deflatedpickle.ducknroll.common.world.World
 
 fun main() {
@@ -23,10 +24,8 @@ fun main() {
     Registries.command.register("map", ::MapCommand)
 
     val world = World()
-
     val player = Player()
 
-    var input: String?
     val timeDate = TimeDateComponent()
     // We want to do different things on update,
     // so we need to extend it
@@ -36,22 +35,24 @@ fun main() {
             // All result in a crash.
             // I thought it might be a scoping issue, so I put it in a static, thread local object
             // Same error!
-            // println(player)
+            //println(player)
 
-            print("> ")
+            print("type text now: > ")
 
             // JS: Unresolved reference
-            input = readLine()
-
-            input?.let { input ->
+            readLine()?.let { input ->
                 if (input.trim() != "") {
+                    val p = this.world.getProperty<Dimension>("dimension").getValue().getProperty<Matrix<Area>>("area")
+                        .getValue()[1, 1].getProperty<Matrix<Spot>>("spot").getValue()[0, 0].getProperty<List<Object>>("object").getValue()[0] as Player
+
                     CommandParser.parse(input)?.let {
                         when (it) {
-                            is HelpCommand -> it.run(player)
-                            is MapCommand -> it.run(player)
+
+                            is HelpCommand -> it.run(p)
+                            is MapCommand -> it.run(p)
                             else -> {
                                 this.step(20)
-                                println(timeDate.getTime())
+                                println(this.world.getComponent(TimeDateComponent::class)?.getTime())
                             }
                         }
                     }

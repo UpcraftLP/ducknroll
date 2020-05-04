@@ -6,7 +6,7 @@ interface ComponentHolder {
     fun addComponent(component: IComponent): IComponent
 
     fun getComponent(index: Int): IComponent
-    fun getComponent(type: KClass<IComponent>): IComponent?
+    fun <T : IComponent> getComponent(type: KClass<T>): T?
 
     fun getAllComponents(): List<IComponent>
     fun getAllComponents(type: KClass<IComponent>): List<IComponent>

@@ -3,24 +3,24 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 kotlin {
     // These two don't work, look at all these errors!
     /*Error: One type argument expected for class ThreadLocal<T : Any!>*/
-    jvm()
+    //jvm()
     /*Error: Unresolved reference: system
     Error: Unresolved reference: getTimeNanos
     Error: Unresolved reference: ThreadLocal
     Error: Unresolved reference: readLine*/
-    js()
+    //js()
 
     // These all work, though
-    linuxX64()
-    macosX64()
+    //linuxX64()
+    //macosX64()
     mingwX64()
-    wasm32()
+    //wasm32()
 
     // For ARM, should be changed to iosArm32 or iosArm64
     // For Linux, should be changed to e.g. linuxX64
@@ -58,6 +58,6 @@ kotlin {
 }
 
 wrapper {
-    gradleVersion = "5.3.1"
-    distributionType = "ALL"
+    gradleVersion = "6.3"
+    distributionType = "BIN"
 }

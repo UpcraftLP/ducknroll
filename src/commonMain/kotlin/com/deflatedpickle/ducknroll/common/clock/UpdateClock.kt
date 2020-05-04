@@ -3,10 +3,10 @@ package com.deflatedpickle.ducknroll.common.clock
 import com.deflatedpickle.ducknroll.common.api.`object`.Object
 import com.deflatedpickle.ducknroll.common.api.clock.AbstractClock
 import com.deflatedpickle.ducknroll.common.api.matrix.Matrix
-import com.deflatedpickle.ducknroll.common.area.Area
-import com.deflatedpickle.ducknroll.common.dimension.Dimension
 import com.deflatedpickle.ducknroll.common.api.util.CommonProperties
 import com.deflatedpickle.ducknroll.common.api.various.ICatchup
+import com.deflatedpickle.ducknroll.common.area.Area
+import com.deflatedpickle.ducknroll.common.dimension.Dimension
 import com.deflatedpickle.ducknroll.common.spot.Spot
 import com.deflatedpickle.ducknroll.common.world.World
 

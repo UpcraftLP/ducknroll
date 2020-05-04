@@ -1,12 +1,11 @@
 package com.deflatedpickle.ducknroll.common.world
 
 import com.deflatedpickle.ducknroll.common.api.`object`.Object
-import com.deflatedpickle.ducknroll.common.clock.UpdateClock
-import com.deflatedpickle.ducknroll.common.dimension.Dimension
 import com.deflatedpickle.ducknroll.common.api.property.ListProperty
 import com.deflatedpickle.ducknroll.common.api.property.ReferenceProperty
 import com.deflatedpickle.ducknroll.common.api.util.CommonProperties
-import com.deflatedpickle.ducknroll.common.area.Area
+import com.deflatedpickle.ducknroll.common.clock.UpdateClock
+import com.deflatedpickle.ducknroll.common.dimension.Dimension
 
 class World : Object() {
     var clock: UpdateClock<Object>? = null

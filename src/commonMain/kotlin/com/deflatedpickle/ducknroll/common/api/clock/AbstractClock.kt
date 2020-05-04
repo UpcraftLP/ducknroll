@@ -1,9 +1,9 @@
 package com.deflatedpickle.ducknroll.common.api.clock
 
-import com.deflatedpickle.ducknroll.common.api.various.IUpdate
 import com.deflatedpickle.ducknroll.common.api.property.BooleanProperty
 import com.deflatedpickle.ducknroll.common.api.property.PropertyHolder
 import com.deflatedpickle.ducknroll.common.api.util.CommonProperties
+import com.deflatedpickle.ducknroll.common.api.various.IUpdate
 
 abstract class AbstractClock<T : IUpdate> : PropertyHolder(),
     IClock<T> {

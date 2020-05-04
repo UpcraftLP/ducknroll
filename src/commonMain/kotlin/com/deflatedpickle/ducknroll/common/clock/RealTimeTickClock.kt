@@ -10,7 +10,7 @@ import kotlin.system.getTimeNanos
 /**
  * A clock based on real-time ticks
  */
-class RealTimeTickClock<T : Object>(
+class RealTimeTickClock<T : Object> (
     world: World,
     /**
      * The calling interval, in ticks
